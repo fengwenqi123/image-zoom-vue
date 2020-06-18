@@ -1,7 +1,7 @@
 {
   "name": "image-zoom-vue",
   "description": "A magnifying glass assembly of Vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "fengwenqi <1318756239@qq.com>",
   "main": "lib/build.js",
   "license": "MIT",

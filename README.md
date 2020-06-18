@@ -1,10 +1,10 @@
-# vue-magnifier-glass
+# image-zoom-vue
 
 >A magnifying glass assembly of Vue
 
 ### How to use?
 ```bash
-npm i vue-magnifier-glass -S
+npm i image-zoom-vue -S
 ```
 
 ### Example
@@ -15,7 +15,7 @@ npm i vue-magnifier-glass -S
 </template>
 
 <script>
-import magnifier from 'vue-magnifier-glass'
+import magnifier from 'image-zoom-vue'
 
   export default {
     components: {
