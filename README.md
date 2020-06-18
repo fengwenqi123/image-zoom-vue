@@ -4,7 +4,7 @@
 
 ### How to use?
 ```bash
-npm i vue-magnifier-glass
+npm i vue-magnifier-glass -S
 ```
 
 ### Example
