@@ -43,7 +43,7 @@ import magnifier from 'image-zoom-vue'
 | borderSize  | 放大镜边框尺寸 | Number | 2 |
 | borderColor     | 放大镜边框颜色 | String | #666666 |
 | shape     | 放大镜形状（circular/square） | String | circular |
-| src     | 缩略图地址 | String | . |
-| srcLarge     | 高清图地址 | String | , |
+| src     | 缩略图地址 | String |  |
+| srcLarge     | 高清图地址 | String |  |
 
 注：外层div需要设置width和height，以便撑开图片

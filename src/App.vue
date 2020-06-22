@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="width: 500px;height: 500px;">
+  <div id="app" style="width: 400px;height: 300px;">
     <magnifier :options="magnifierOptions"></magnifier>
   </div>
 </template>
