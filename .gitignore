@@ -2,11 +2,11 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-#webpack.config.js
-#*.html
-#.babelrc
-#.editorconfig
-#src/
+webpack.config.js
+*.html
+.babelrc
+.editorconfig
+src/
 # Editor directories and files
 .idea
 *.suo

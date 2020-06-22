@@ -65,10 +65,37 @@
         cursorX: 0,
         cursorY: 0,
         thumbPos: {x: 0, y: 0},
-        backgroundPos: '0 0'
+        backgroundPos: '0 0',
+        largeWidth: null,
+        largeHeight: null,
+        ProportionX: null,
+        ProportionY: null
       }
     },
+    mounted() {
+      this.$nextTick(() => {
+        this.$refs.magnificationElement.addEventListener('mousemove', this.moveMagnifier)
+      })
+      this.getImgSize()
+    },
     methods: {
+      getImgSize() {
+        const img = document.createElement('img')
+        img.src = this.options.srcLarge
+        if (img.complete) {
+          this.largeWidth = img.width
+          this.largeHeight = img.height
+        } else {
+          img.onload = () => {
+            this.largeWidth = img.width
+            this.largeHeight = img.height
+          }
+        }
+      },
+      getImgProp(w, h) {
+        this.ProportionX = this.largeWidth / w
+        this.ProportionY = this.largeHeight / h
+      },
       getCursorPos: function (e) {
         var x = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft)
         var y = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop)
@@ -80,6 +107,7 @@
         var el = this.$refs.magnificationElement
 
         this.bounds = el.getBoundingClientRect()
+        this.getImgProp(this.bounds.width, this.bounds.height)
 
         var xPos = 0
         var yPos = 0
@@ -111,7 +139,8 @@
         this.getBounds()
         this.getCursorPos(e)
 
-        this.backgroundPos = (this.cursorX) * 100 / this.bounds.width + '% ' + (this.cursorY) * 100 / this.bounds.height + '%'
+        // this.backgroundPos = `${(this.cursorX) * 100 / this.bounds.width - this.ProportionX}% ${(this.cursorY) * 100 / this.bounds.height - this.ProportionY}%`
+        this.backgroundPos = `${this.cursorX * this.ProportionX * -1 + this.options.width / 2}px ${this.cursorY * this.ProportionY * -1 + this.options.height / 2}px`
       },
       getTransform: function (el) {
         var transform = window.getComputedStyle(el, null).getPropertyValue('-webkit-transform')
@@ -144,11 +173,6 @@
         }
         return output
       }
-    },
-    mounted() {
-      this.$nextTick(() => {
-        this.$refs.magnificationElement.addEventListener('mousemove', this.moveMagnifier)
-      })
     }
   }
 </script>

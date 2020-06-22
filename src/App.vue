@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="width: 400px;height: 300px;">
+  <div id="app" style="width: 960px;height: 540px;">
     <magnifier :options="magnifierOptions"></magnifier>
   </div>
 </template>
@@ -14,8 +14,8 @@
     data() {
       return {
         magnifierOptions: {
-          width: 200,
-          height: 200,
+          width: 300,
+          height: 300,
           borderSize: 2,
           borderColor: '#666666',
           shape: '',
@@ -33,5 +33,6 @@
     /*margin-top: 120px;*/
     /*width: 303px;*/
     /*height: 531px;*/
+    margin: 100px;
   }
 </style>
