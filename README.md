@@ -11,7 +11,9 @@ npm i image-zoom-vue -S
 
 ```vue
 <template>
+  <div id="app" style="width: 500px;height: 500px;">
     <magnifier :options="magnifierOptions"></magnifier>
+  </div>
 </template>
 
 <script>
@@ -24,11 +26,6 @@ import magnifier from 'image-zoom-vue'
     data() {
       return {
         magnifierOptions: {
-          width: 200,
-          height: 200,
-          borderSize: 2,
-          borderColor: '#666666',
-          shape: '',
           src: '../src/back.png',
           srcLarge: '../src/back.png'
         }

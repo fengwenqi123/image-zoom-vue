@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" style="width: 500px;height: 500px;">
     <magnifier :options="magnifierOptions"></magnifier>
   </div>
 </template>
@@ -29,9 +29,9 @@
 
 <style scoped lang="scss">
   #app {
-    margin-left: 300px;
-    margin-top: 120px;
-    width: 303px;
-    height: 531px;
+    /*margin-left: 300px;*/
+    /*margin-top: 120px;*/
+    /*width: 303px;*/
+    /*height: 531px;*/
   }
 </style>
